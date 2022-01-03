@@ -1,0 +1,20 @@
+Message stats for scenario reality_Epidemic
+sim_time: 86400.0000
+created: 2504
+started: 4168
+relayed: 4052
+aborted: 116
+dropped: 6029
+removed: 0
+delivered: 44
+delivery_prob: 0.0176
+response_prob: 0.0000
+overhead_ratio: 91.0909
+latency_avg: 4334.8636
+latency_med: 2541.0000
+hopcount_avg: 3.3636
+hopcount_med: 3
+buffertime_avg: 14291.0227
+buffertime_med: 16816.0000
+rtt_avg: NaN
+rtt_med: NaN

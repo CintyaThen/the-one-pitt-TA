@@ -417,4 +417,6 @@ public abstract class ReportCollectData {
 		return format(sum2/values.size() - (E_X*E_X));
 	}
 	
+	
+	
 }

@@ -3,7 +3,7 @@
 #
 
 ## Scenario settings
-Scenario.name = NumberOfHopsPerMsgPerTimeReport of epidemic
+Scenario.name = Collet_Data
 Scenario.simulateConnections = false
 Scenario.updateInterval = 1
 # 43200s == 12h
@@ -68,5 +68,5 @@ Report.warmup = 0
 # default directory of reports (can be overridden per Report with output setting)
 Report.reportDir = reports/
 # Report classes to load
-Report.report1 = NumberOfHopsPerMsgPerTimeReport
+Report.report1 = DistanceDelayReport
 

@@ -3,11 +3,11 @@
 #
 
 ## Scenario settings
-Scenario.name = Collect_Data
+Scenario.name = Collect_Variance
 Scenario.simulateConnections = false
 Scenario.updateInterval = 1
 # 43200s == 12h
-Scenario.endTime = 86400
+Scenario.endTime = 16981816
 
 
 ## Interface-specific settings:
@@ -52,15 +52,15 @@ Scenario.nrofHostGroups = 1
 
 
 # Common settings for all groups
-Group.movementModel = RandomWaypoint
+Group.movementModel = StationaryMovement
 Group.router = DecisionEngineRouter
 Group.nodeLocation = 0,1
 
-DecisionEngineRouter.decisionEngine = EpidemicRouterCollectData
-#DecisionEngineRouter.communityDetectAlg = routing.community.KCliqueCommunityDetection
-#DecisionEngineRouter.K = 5
-#DecisionEngineRouter.familiarThreshold = 7000
-#DecisionEngineRouter.centralityAlg = routing.community.CWindowCentrality
+DecisionEngineRouter.decisionEngine = community.BubbleRap_Tugas
+DecisionEngineRouter.communityDetectAlg = routing.community.KCliqueCommunityDetection
+DecisionEngineRouter.K = 5
+DecisionEngineRouter.familiarThreshold = 7000
+DecisionEngineRouter.centralityAlg = routing.community.CWindowCentrality
 
 Group.bufferSize = 5M
 Group.waitTime = 0, 120
@@ -135,13 +135,13 @@ Events1.class = StandardEventsReader
 #Events1.prefix = M
 Events1.filePath = RealityConnectionTraceFinal.txt
 
-Events2.class = MessageEventGenerator
+# Events2.class = MessageEventGenerator
 # change interval to have more or less messages, see javadocs for more information.
-Events2.interval = 30,40
-Events2.size = 1k
+# Events2.interval = 30,40
+# Events2.size = 1k
 # range of message source/destination addresses
-Events2.hosts = 0,96
-Events2.prefix = M
+# Events2.hosts = 0,96
+# Events2.prefix = M
 
 ## Movement model settings
 # seed for movement models' pseudo random number generator (default = 0)
@@ -168,10 +168,8 @@ Report.warmup = 0
 # default directory of reports (can be overridden per Report with output setting)
 Report.reportDir = reports/
 # Report classes to load
-Report.report1 = DistanceDelayReport
-# Report.report2 = StandardDeviationInterContactNodeReportIterator
-# Report.report3 = Burstiness2InterContactNodeReportIterator
-# Report.report2 = MeanInterContactNodeReportIterator
+Report.report1 = ContactsPerHourReport
+# Report.report2 = MeanInterContactNodeReportIterator2
 
 ## Default settings for some routers settings
 #ProphetRouter.secondsInTimeUnit = 30

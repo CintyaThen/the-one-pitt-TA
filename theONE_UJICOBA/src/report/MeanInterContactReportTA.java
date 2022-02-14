@@ -58,6 +58,7 @@ public class MeanInterContactReportTA extends Report{
 					
 					
 					List<Double> durationList = new LinkedList();
+				//	durationList = SimClock.getIntTime()/3600;
 					while (i.hasNext() ) {
 						Duration d = i.next();
 						if (first == false) {

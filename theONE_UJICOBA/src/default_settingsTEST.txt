@@ -68,5 +68,5 @@ Report.warmup = 0
 # default directory of reports (can be overridden per Report with output setting)
 Report.reportDir = reports/
 # Report classes to load
-Report.report1 = DistanceDelayReport
+Report.report1 = EncounterFrequencyReport
 

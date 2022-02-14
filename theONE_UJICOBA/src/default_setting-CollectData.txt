@@ -3,7 +3,7 @@
 #
 
 ## Scenario settings
-Scenario.name = Collect_Variance
+Scenario.name = CollectData
 Scenario.simulateConnections = false
 Scenario.updateInterval = 1
 # 43200s == 12h
@@ -53,6 +53,7 @@ Scenario.nrofHostGroups = 1
 
 # Common settings for all groups
 Group.movementModel = StationaryMovement
+
 Group.router = DecisionEngineRouter
 Group.nodeLocation = 0,1
 
@@ -168,7 +169,7 @@ Report.warmup = 0
 # default directory of reports (can be overridden per Report with output setting)
 Report.reportDir = reports/
 # Report classes to load
-Report.report1 = ContactsPerHourReport
+Report.report1 = ClosenessNodeTiapWaktuReport
 # Report.report2 = MeanInterContactNodeReportIterator2
 
 ## Default settings for some routers settings

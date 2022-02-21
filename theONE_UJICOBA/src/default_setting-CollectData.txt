@@ -169,7 +169,7 @@ Report.warmup = 0
 # default directory of reports (can be overridden per Report with output setting)
 Report.reportDir = reports/
 # Report classes to load
-Report.report1 = ClosenessNodeTiapWaktuReport
+Report.report1 = FrequencyPerNodeReport
 # Report.report2 = MeanInterContactNodeReportIterator2
 
 ## Default settings for some routers settings

@@ -7,7 +7,6 @@ package report;
 import java.util.*;
 //import java.util.List;
 //import java.util.Map;
-import java.util.Map.Entry;
 
 import core.DTNHost;
 import core.Message;
@@ -34,35 +33,44 @@ public class ClosenessNodeTiapWaktuReport extends Report {
     @Override
     public void done() {
         List<DTNHost> nodes = SimScenario.getInstance().getHosts();
-		/*
-		 * for (DTNHost ho : nodes) { MessageRouter r = ho.getRouter(); if (!(r
-		 * instanceof DecisionEngineRouter)) { continue; } RoutingDecisionEngine de =
-		 * ((DecisionEngineRouter) r).getDecisionEngine(); if (!(de instanceof
-		 * ClosenessDecisionEngine)) { continue; } ClosenessDecisionEngine cd =
-		 * (ClosenessDecisionEngine) de; Map<DTNHost, List<Double>> closenessCounter =
-		 * cd.getCloseness();
-		 * 
-		 * for (Map.Entry<DTNHost, List<Double>> entry : closenessCounter.entrySet()) {
-		 * String print = ""; for (Double value : entry.getValue()) { print = print +
-		 * "\n" + value; } write(print); } }
-		 */
-
-        for (DTNHost node : nodes) {
-
-            if (closenessCount.containsKey(node)) {
-                double avgCloseness = getAverageCloseness(closenessCount.get(node));
-             //   encounterData.put(node, nodes.ge );
+        for (DTNHost ho : nodes) {
+            MessageRouter r = ho.getRouter();
+            if (!(r instanceof DecisionEngineRouter)) {
+                continue;
+            }
+            RoutingDecisionEngine de = ((DecisionEngineRouter) r).getDecisionEngine();
+            if (!(de instanceof ClosenessDecisionEngine)) {
+                continue;
+            }
+            ClosenessDecisionEngine cd = (ClosenessDecisionEngine) de;
+            Map<DTNHost, List<Double>> closenessCounter = cd.getCloseness();
+            
+            for (Map.Entry<DTNHost, List<Double>> entry : closenessCounter.entrySet()) {
+                String print = "";
+                for (Double value : entry.getValue()) {
+                    print = print + "\n" + value;
+                }
+                write(print);
             }
         }
-        System.out.println(closenessCount);
-        String print = "";
-        for (Map.Entry<DTNHost, List<Double>> entry : encounterData.entrySet()) {
-            DTNHost key = entry.getKey();
-            for (Double value : entry.getValue()) {
-                print = print + "\n" + value;
-            }
-        }
-        write(print);
+
+//        for (DTNHost node : nodes) {
+
+
+//            if (closenessCount.containsKey(node)) {
+//                double avgCloseness = getAverageCloseness(closenessCount.get(node));
+//                encounterData.put(node, avgCloseness);
+//            }
+//        }
+//        System.out.println(closenessCount);
+//        String print = "";
+//        for (Map.Entry<DTNHost, List<Double>> entry : encounterData.entrySet()) {
+//            DTNHost key = entry.getKey();
+//            for (Double value : entry.getValue()) {
+//                print = print + "\n" + value;
+//            }
+//        }
+//        write(print);
         super.done();
     }
 

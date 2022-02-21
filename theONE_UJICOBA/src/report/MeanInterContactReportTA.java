@@ -43,11 +43,12 @@ public class MeanInterContactReportTA extends Report{
             ConnListDecisionEngine cld = (ConnListDecisionEngine) de;
 
             Map<DTNHost, List<Duration>> nodeConnList = cld.getConnList(); //Mengambil lokal komunitas yang dimiliki host tersebut
-            
+           // int time = nodeConnList.size() / 21600;
             for (Map.Entry<DTNHost, List<Duration>> entry : nodeConnList.entrySet()) {
 
             	List<Duration> nodeDuration = entry.getValue();
             	Iterator<Duration> i = nodeDuration.iterator();
+            //	Iterator<Duration> i = time.iterator();
             	double endTimebefore=0;
             	boolean first = true;
             	List<Double> durationList = new LinkedList();

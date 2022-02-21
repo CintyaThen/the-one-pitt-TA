@@ -207,6 +207,14 @@ public class BubbleRap_Tugas implements RoutingDecisionEngine, CommunityDetectio
 	@Override
 	public Map<DTNHost, List<Duration>> getConnList() {
 		// TODO Auto-generated method stub
+		int epochControl=0;
+		/*
+		 * for(Map.Entry<DTNHost, List<Duration>> entry : connHistory.entrySet()) {
+		 * DTNHost h = entry.getKey(); for(Duration d : entry.getValue()) { int
+		 * timePassed = (int)(timeNow - d.end); if(timePassed > CENTRALITY_TIME_WINDOW *
+		 * EPOCH_COUNT)//{ //System.out.println("break\n"); break; epoch = timePassed /
+		 * CENTRALITY_TIME_WINDOW; if(epoch>epochControl) epochControl=epoch;
+		 */
 		return this.connHistory;
 	}
 

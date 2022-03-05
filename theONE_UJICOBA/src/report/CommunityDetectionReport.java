@@ -63,22 +63,19 @@ public class CommunityDetectionReport extends Report {
         }
 
 //         print each community and its size out to the file
-        for (Set<DTNHost> c : communities) {
-            String print = "";
-            for (DTNHost dTNHost : c) {
-                print = print + "\t" + dTNHost;
+		/*
+		 * for (Set<DTNHost> c : communities) { String print = ""; for (DTNHost dTNHost
+		 * : c) { print = print + "\t" + dTNHost; } write(print); }
+		 */
+
+        for (Map.Entry<Integer, List<Set<DTNHost>>> entry : nodeCommunities.entrySet()) {
+          Integer key = entry.getKey();
+            String print = key + "";
+            for (Set<DTNHost> community : communities) {
+                print += "\t" + community;
             }
             write(print);
         }
-
-//        for (Map.Entry<Integer, List<Set<DTNHost>>> entry : nodeCommunities.entrySet()) {
-//            Integer key = entry.getKey();
-//            String print = key + "";
-//            for (Set<DTNHost> community : communities) {
-//                print += "\t" + community;
-//            }
-//            write(print);
-//        }
         super.done();
     }
 

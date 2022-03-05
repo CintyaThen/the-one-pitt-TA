@@ -3,7 +3,7 @@
 #
 
 ## Scenario settings
-Scenario.name = CollectData
+Scenario.name = CollectData2
 Scenario.simulateConnections = false
 Scenario.updateInterval = 1
 # 43200s == 12h
@@ -169,7 +169,7 @@ Report.warmup = 0
 # default directory of reports (can be overridden per Report with output setting)
 Report.reportDir = reports/
 # Report classes to load
-Report.report1 = FrequencyPerNodeReport
+Report.report1 = CommunityDetectionReport
 # Report.report2 = MeanInterContactNodeReportIterator2
 
 ## Default settings for some routers settings
